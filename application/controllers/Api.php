@@ -22,9 +22,10 @@ class Api extends CI_Controller {
 
     public function invalid_key() {
         $response['status'] = false;
-        $response['code'] = 0;
+        $response['code'] = 500;
         $response['message'] = 'Invalid API Key';
 
+        http_response_code($response['code']);
         echo json_encode($response);
     }
 
@@ -65,6 +66,7 @@ class Api extends CI_Controller {
                 }
             }
         }
+        http_response_code($response['code']);
         echo json_encode($response);
     }
 
@@ -87,6 +89,7 @@ class Api extends CI_Controller {
                 $response['message'] = 'Gagal menambah data';
             }
         }
+        http_response_code($response['code']);
         echo json_encode($response);
     }
 
@@ -121,6 +124,7 @@ class Api extends CI_Controller {
                 }
             }
         }
+        http_response_code($response['code']);
         echo json_encode($response);
     }
 
@@ -154,6 +158,7 @@ class Api extends CI_Controller {
                 }
             }
         }
+        http_response_code($response['code']);
         echo json_encode($response);
     }
 
